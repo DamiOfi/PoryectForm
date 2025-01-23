@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark {
+  --tw-bg-opacity: 1;
+  background-color: #530000 !important;
+  color: white;
+}
