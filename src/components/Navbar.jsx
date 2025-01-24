@@ -1,23 +1,22 @@
-import { useState } from 'react';
+import React, { useState } from "react";
+import { NavbarContainer, ThemeButton, Logo } from "./Navbar.styles"; // Importa el estilo del logo
+import logo from "../assets/logoOfi.png";
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    document.documentElement.classList.toggle('dark');
+    document.documentElement.classList.toggle("dark");
   };
 
   return (
-    <nav className="flex justify-between items-center p-4 bg-primary text-white">
-      <h1 className="text-xl font-bold">Estudio Jurídico</h1>
-      <button
-        onClick={toggleDarkMode}
-        className="bg-secondary px-4 py-2 rounded hover:bg-dark transition"
-      >
-        {darkMode ? 'Modo Claro' : 'Modo Oscuro'}
-      </button>
-    </nav>
+    <NavbarContainer>
+      <Logo src={logo} alt="Ico" />
+      <ThemeButton onClick={toggleDarkMode}>
+        {darkMode ? "Modo Claro" : "Modo Oscuro"}
+      </ThemeButton>
+    </NavbarContainer>
   );
 };
 

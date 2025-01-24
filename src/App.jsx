@@ -1,16 +1,18 @@
 import Navbar from './components/Navbar';
 import Form from './components/Form';
 import Footer from './components/Footer';
+import { GlobalStyles } from "./GlobalStyles";
 
 const App = () => {
   return (
-    <div className="dark:bg-dark min-h-screen flex flex-col">
+    <>
+      <GlobalStyles />
       <Navbar />
-      <main className="flex-grow">
+      <main>
         <Form />
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 
