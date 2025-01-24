@@ -18,7 +18,7 @@ const Form = () => {
   const referees = ["Mariano Cardozo", "Manuel Castellano", "Candela Ortiz", "Franco Gomez", "Jonatan Rodriguez"]; // Opciones de referidos
 
   const handleReferredChange = (e) => {
-    setIsReferred(e.target.value === "yes");
+    setIsReferred(e.target.value === "Si");
   };
 
   const sendEmail = (e) => {

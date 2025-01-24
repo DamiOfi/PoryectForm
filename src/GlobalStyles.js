@@ -18,9 +18,8 @@ export const GlobalStyles = createGlobalStyle`
     --primary: #8c0000;
     --primary-foreground: 210 40% 98%;
     --radius: 0.5rem;
-    --secondary:#530000; 
+    --secondary:#530000;
     --tertiary:#4b4b55;
-
   }
 
   body {
