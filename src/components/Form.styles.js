@@ -14,19 +14,19 @@ export const FormTitle = styled.h2`
   text-align: center;
   font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 16px;
+  margin-bottom: 25px;
 `;
 
 export const StyledForm = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 
   .input-container{
     display: flex;
     flex-direction: column;
-    row-gap: 7px;
+    row-gap: 10px;
   }
 `;
 
@@ -84,6 +84,7 @@ export const StyledTextarea = styled.textarea`
 
 export const SubmitButton = styled.button`
   padding: 10px 20px;
+  margin-top: 30px;
   font-size: 1.2em;
   color: hsl(var(--primary-foreground));
   background-color: var(--primary);
