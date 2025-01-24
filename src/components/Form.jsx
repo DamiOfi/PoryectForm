@@ -70,10 +70,12 @@ const Form = () => {
             placeholder="Selecciona un tema"
           >
             <option value="-">-</option>
-            <option value="laboral">Laboral</option>
-            <option value="inmueble">Inmueble</option>
-            <option value="familiar">Familiar</option>
-            <option value="automotor">Automotor</option>
+            <option value="Laboral">Laboral</option>
+            <option value="Inmueble">Inmueble</option>
+            <option value="Familiar">Familiar</option>
+            <option value="Automotor">Automotor</option>
+            <option value="Penal">Penal</option>
+            <option value="Otro">Otro</option>
           </StyledSelect>
         </div>
         <div className="input-container">
@@ -93,8 +95,8 @@ const Form = () => {
             onChange={handleReferredChange}
             required
           >
-            <option value="no">No</option>
-            <option value="yes">Sí</option>
+            <option value="No">No</option>
+            <option value="Si">Sí</option>
           </StyledSelect>
         </div>
         {isReferred && (
