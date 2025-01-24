@@ -15,9 +15,12 @@ export const GlobalStyles = createGlobalStyle`
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-    --primary: 0 100% 27%;
+    --primary: #8c0000;
     --primary-foreground: 210 40% 98%;
     --radius: 0.5rem;
+    --secondary:#530000; 
+    --tertiary:#4b4b55;
+
   }
 
   body {

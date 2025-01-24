@@ -16,13 +16,13 @@ export const NavbarTitle = styled.h1`
 
 export const ThemeButton = styled.button`
   padding: 8px 12px;
-  background-color: hsl(var(--primary));
+  background-color: var(--primary);
   color: hsl(var(--primary-foreground));
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
   &:hover {
-    background-color: hsl(var(--primary), 0.9);
+    background-color: var(--primary);
   }
 `;
 

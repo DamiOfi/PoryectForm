@@ -4,7 +4,7 @@ export const StyledButton = styled.button`
   padding: 10px 20px;
   font-size: 16px;
   color: white;
-  background-color: hsl(var(--primary));
+  background-color: var(--primary);
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
