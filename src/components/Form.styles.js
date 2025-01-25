@@ -5,7 +5,7 @@ export const FormContainer = styled.div`
   max-width: 700px;
   margin: 0 auto;
   padding: 24px;
-  background-color: hsl(var(--card));
+  background-color: var(--background-form);
   border-radius: var(--radius);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 `;
@@ -15,6 +15,7 @@ export const FormTitle = styled.h2`
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 25px;
+  color: var(--text);
 `;
 
 export const StyledForm = styled.form`
@@ -39,7 +40,7 @@ export const FieldContainer = styled.div`
 export const StyledLabel = styled.label`
   font-size: 1.2em;
   font-weight: bold;
-  color: hsl(var(--foreground));
+  color: var(--text-form);
 `;
 
 export const StyledInput = styled.input`
@@ -47,6 +48,8 @@ export const StyledInput = styled.input`
   font-size: 1.1em;
   border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
+  background-color: var(--color-inputs);
+  color: var(--text);
   &:focus {
     outline: none;
     border-color: var(--primary);
@@ -59,8 +62,8 @@ export const StyledSelect = styled.select`
   font-size: 1.1em;
   border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
-  background-color: white;
-  color: hsl(var(--foreground));
+  background-color: var(--color-inputs);
+  color: var(--text);
   &:focus {
     outline: none;
     border-color: var(--primary);
@@ -75,6 +78,8 @@ export const StyledTextarea = styled.textarea`
   border-radius: var(--radius);
   resize: vertical;
   min-height: 100px;
+  background-color: var(--color-inputs);
+  color: var(--text);
   &:focus {
     outline: none;
     border-color: var(--primary);
@@ -86,7 +91,7 @@ export const SubmitButton = styled.button`
   padding: 10px 20px;
   margin-top: 30px;
   font-size: 1.2em;
-  color: hsl(var(--primary-foreground));
+  color: #FFFFFF;
   background-color: var(--primary);
   border: none;
   border-radius: var(--radius);

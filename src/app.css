@@ -24,11 +24,10 @@ body {
   align-items: center;    /* Centra verticalmente */
   flex: 1;                /* Ocupa el espacio disponible */
   padding: 16px;          /* Espaciado opcional alrededor del contenido */
-  background-color: #f9f9f9; /* Color de fondo opcional */
+  background-color: var(--background-secondary); /* Color de fondo opcional */
 }
 
 footer {
-  background-color: #f5f5f5;
   text-align: center;
   padding: 16px;
   font-size: 0.9rem;

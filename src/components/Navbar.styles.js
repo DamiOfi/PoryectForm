@@ -6,7 +6,7 @@ export const NavbarContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background-color: hsl(var(--background));
+  background-color: var(--background-primary);
   border-bottom: 1px solid hsl(var(--border));
 `;
 
@@ -17,12 +17,12 @@ export const NavbarTitle = styled.h1`
 export const ThemeButton = styled.button`
   padding: 8px 12px;
   background-color: var(--primary);
-  color: hsl(var(--primary-foreground));
+  color: #FFFFFF;
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
   &:hover {
-    background-color: var(--primary);
+    background-color: var(--secondary);
   }
 `;
 
