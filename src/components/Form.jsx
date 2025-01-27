@@ -13,11 +13,16 @@ import {
 
 const Form = () => {
   const form = useRef();
-  const [isReferred, setIsReferred] = useState(false); // Estado para mostrar u ocultar el campo de referido
-  const referees = ["Mariano Cardozo", "Manuel Castellano", "Candela Ortiz", "Franco Gomez", "Jonatan Rodriguez"]; // Opciones de referidos
+  const [isReferred, setIsReferred] = useState(false);
+  const referees = ["Mariano Cardozo", "Manuel Castellano", "Candela Ortiz", "Franco Gomez", "Jonatan Rodriguez"];
 
   const handleReferredChange = (e) => {
     setIsReferred(e.target.value === "Si");
+  };
+
+  const adjustTextareaHeight = (e) => {
+    e.target.style.height = "auto"; // Restablece la altura
+    e.target.style.height = `${e.target.scrollHeight}px`; // Ajusta la altura al contenido
   };
 
   const sendEmail = (e) => {
@@ -31,7 +36,11 @@ const Form = () => {
         "u1-Ssnaw3HN6F0Nvm"
       )
       .then(
-        () => alert("Mensaje enviado correctamente!"),
+        () => {
+          alert("Mensaje enviado correctamente!");
+          form.current.reset(); // Limpia todos los inputs
+          setIsReferred(false); // Restaura el estado de referido
+        },
         () => alert("Ocurrió un error, intenta nuevamente.")
       );
   };
@@ -84,6 +93,7 @@ const Form = () => {
             id="description"
             placeholder="Escribe aquí los detalles de tu caso"
             required
+            onInput={adjustTextareaHeight}
           />
         </div>
         <div className="input-container">
