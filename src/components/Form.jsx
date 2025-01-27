@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
+import Swal from "sweetalert2"; // Importa SweetAlert2
 import {
   FormContainer,
   FormTitle,
@@ -37,11 +38,23 @@ const Form = () => {
       )
       .then(
         () => {
-          alert("Mensaje enviado correctamente!");
+          Swal.fire({
+            icon: "success",
+            title: "¡Mensaje enviado!",
+            text: "Tu mensaje se envió correctamente. Nos pondremos en contacto contigo pronto.",
+            confirmButtonText: "Aceptar",
+          });
           form.current.reset(); // Limpia todos los inputs
           setIsReferred(false); // Restaura el estado de referido
         },
-        () => alert("Ocurrió un error, intenta nuevamente.")
+        () => {
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Ocurrió un error al enviar tu mensaje. Por favor, intenta nuevamente.",
+            confirmButtonText: "Aceptar",
+          });
+        }
       );
   };
 
