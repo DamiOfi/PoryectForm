@@ -8,6 +8,40 @@ export const FormContainer = styled.div`
   background-color: var(--background-form);
   border-radius: var(--radius);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .container-img{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    .container-list{
+      display: flex;
+      align-items: center;
+      height: 30px;
+
+      .img-span{
+        color: var(--text);
+      }
+    
+      .remove-btn{
+        margin-left: "10px";
+        background: "red";
+        color: "white";
+        border: "none";
+        border-radius: "50%";
+        cursor: "pointer";
+        width: "20px";
+        height: "20px";
+        display: "flex";
+        align-items: "center";
+        justify-content: "center";
+      }
+
+    }
+
+  }
+
 `;
 
 export const FormTitle = styled.h2`
