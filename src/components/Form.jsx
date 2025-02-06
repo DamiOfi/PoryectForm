@@ -175,6 +175,31 @@ const Form = () => {
           />
         </div>
         <div className="input-container">
+          <StyledLabel htmlFor="referred">¿Referido de alguien?</StyledLabel>
+          <StyledSelect
+            name="referred"
+            id="referred"
+            onChange={handleReferredChange}
+            required
+          >
+            <option value="No">No</option>
+            <option value="Si">Sí</option>
+          </StyledSelect>
+        </div>
+        {isReferred && (
+          <div className="input-container">
+            <StyledLabel htmlFor="referee">¿De quién?</StyledLabel>
+            <StyledSelect name="referee" id="referee" required>
+              <option value="">Selecciona una opción</option>
+              {referees.map((referee, index) => (
+                <option key={index} value={referee}>
+                  {referee}
+                </option>
+              ))}
+            </StyledSelect>
+          </div>
+        )}
+        <div className="input-container">
           <StyledLabel htmlFor="images">Agrega imágenes (opcional) (máximo 3):</StyledLabel>
           <StyledInput
             type="file"
@@ -215,31 +240,6 @@ const Form = () => {
             ))}
           </div>
         </div>
-        <div className="input-container">
-          <StyledLabel htmlFor="referred">¿Referido de alguien?</StyledLabel>
-          <StyledSelect
-            name="referred"
-            id="referred"
-            onChange={handleReferredChange}
-            required
-          >
-            <option value="No">No</option>
-            <option value="Si">Sí</option>
-          </StyledSelect>
-        </div>
-        {isReferred && (
-          <div className="input-container">
-            <StyledLabel htmlFor="referee">¿De quién?</StyledLabel>
-            <StyledSelect name="referee" id="referee" required>
-              <option value="">Selecciona una opción</option>
-              {referees.map((referee, index) => (
-                <option key={index} value={referee}>
-                  {referee}
-                </option>
-              ))}
-            </StyledSelect>
-          </div>
-        )}
         <SubmitButton type="submit">Enviar</SubmitButton>
       </StyledForm>
     </FormContainer>
