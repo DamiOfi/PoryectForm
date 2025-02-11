@@ -30,15 +30,6 @@ const Form = () => {
 
   const handleImageUpload = async (e) => {
     const files = e.target.files;
-    if (files.length + images.length > 3) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "Solo puedes subir un máximo de 3 imágenes.",
-        confirmButtonText: "Aceptar",
-      });
-      return;
-    }
 
     const uploadedImages = [];
     const uploadedImageNames = [];
@@ -200,46 +191,48 @@ const Form = () => {
           </div>
         )}
         <div className="input-container">
-          <StyledLabel htmlFor="images">Agrega imágenes (opcional) (máximo 3):</StyledLabel>
-          <StyledInput
-            type="file"
-            name="images"
-            id="images"
-            accept="image/*"
-            multiple
-            onChange={handleImageUpload}
-          />
-          {/* Lista de nombres de imágenes con botón para eliminar */}
-          <div className="container-img">
-            {imageNames.map((name, index) => (
-              <div
-                className="container-list"
-                key={index}
-              >
-                <span className="img-span">{name}</span>
-                <button
-                  type="button"
-                  onClick={() => removeImage(index)}
-                  style={{
-                    marginLeft: "15px",
-                    background: "red",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "50%",
-                    cursor: "pointer",
-                    width: "23px",
-                    height: "23px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  X
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
+  <StyledLabel htmlFor="images">Agrega imágenes (opcional):</StyledLabel>
+  <p style={{ fontSize: "12px", color: "#666", marginTop: "5px", marginBottom: "10px" }}>
+    Solo se permiten fotos relacionadas con el caso. Cualquier imagen inapropiada resultará en la no continuidad del caso.
+  </p>
+  <StyledInput
+    type="file"
+    name="images"
+    id="images"
+    accept="image/*"
+    multiple
+    onChange={handleImageUpload}
+  />
+  <div className="container-img">
+    {imageNames.map((name, index) => (
+      <div
+        className="container-list"
+        key={index}
+      >
+        <span className="img-span">{name}</span>
+        <button
+          type="button"
+          onClick={() => removeImage(index)}
+          style={{
+            marginLeft: "15px",
+            background: "red",
+            color: "white",
+            border: "none",
+            borderRadius: "50%",
+            cursor: "pointer",
+            width: "23px",
+            height: "23px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          X
+        </button>
+      </div>
+    ))}
+  </div>
+</div>
         <SubmitButton type="submit">Enviar</SubmitButton>
       </StyledForm>
     </FormContainer>
